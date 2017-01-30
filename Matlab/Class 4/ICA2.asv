@@ -1,5 +1,0 @@
-load('steel.txt');
-strain = [1];
-stress = [1];
-time 
-subplot(2,2,1);
