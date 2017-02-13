@@ -1,0 +1,74 @@
+rden = [53, 64, 53, 64, 65, 55, 75, 72, 40, 58, 43, 32, 40, 30, 72, 90, 40, 50, 55, 50, 55, 75, 53, 70, 64, 53, 50, 44, 100, 65, 68, 78, 58, 80, 55, 100, 100, 52, 58];
+accel = [0.219, 0.219, 0.146, 0.146, 0.684, 0.611, 0.591, 0.522, 0.258, 0.25, 0.283, 0.419, 0.123, 0.138, 0.422, 0.556, 0.447, 0.547, 0.204, 0.17, 0.17, 0.192, 0.292, 0.299, 0.292, 0.225, 0.313, 0.224, 0.231, 0.334, 0.419, 0.352, 0.363, 0.291, 0.314, 0.377, 0.434, 0.35, 0.334];
+
+load = [950	972	981	895	908	995	646	987	940	937	846	947	827	961	935	956];
+stren = [42.25	43.25	43.50	39.25	40.25	44.25	28.75	44.25	41.75	41.75	38.00	42.50	36.75	42.75	42.00	33.50];
+
+disp('------RDEN------');
+fprintf('Mean %.2f\n',mean(rden));
+fprintf('Median %.2f\n',median(rden));
+fprintf('Mode %.2f\n',mode(rden));
+fprintf('Min %.2f\n',min(rden));
+fprintf('Max %.2f\n',max(rden));
+fprintf('Lower Quart %.2f\n',prctile(rden,25));
+fprintf('Mean %.2f\n',prctile(rden,75));
+fprintf('Variance %.2f\n',var(rden));
+fprintf('Stdev %.2f\n',std(rden));
+fprintf('Range %.2f\n',range(rden));
+fprintf('IQR %.2f\n\n',iqr(rden));
+
+disp('------ACCEL------');
+fprintf('Mean %.2f\n',mean(accel));
+fprintf('Median %.2f\n',median(accel));
+fprintf('Mode %.2f\n',mode(accel));
+fprintf('Min %.2f\n',min(accel));
+fprintf('Max %.2f\n',max(accel));
+fprintf('Lower Quart %.2f\n',prctile(accel,25));
+fprintf('Mean %.2f\n',prctile(accel,75));
+fprintf('Variance %.2f\n',var(accel));
+fprintf('Stdev %.2f\n',std(accel));
+fprintf('Range %.2f\n',range(accel));
+fprintf('IQR %.2f\n\n',iqr(accel));
+
+disp('------LOAD------');
+fprintf('Mean %.2f\n',mean(load));
+fprintf('Median %.2f\n',median(load));
+fprintf('Mode %.2f\n',mode(load));
+fprintf('Min %.2f\n',min(load));
+fprintf('Max %.2f\n',max(load));
+fprintf('Lower Quart %.2f\n',prctile(load,25));
+fprintf('Mean %.2f\n',prctile(load,75));
+fprintf('Variance %.2f\n',var(load));
+fprintf('Stdev %.2f\n',std(load));
+fprintf('Range %.2f\n',range(load));
+fprintf('IQR %.2f\n\n',iqr(load));
+
+disp('------STRENGTH------');
+fprintf('Mean %.2f\n',mean(stren));
+fprintf('Median %.2f\n',median(stren));
+fprintf('Mode %.2f\n',mode(stren));
+fprintf('Min %.2f\n',min(stren));
+fprintf('Max %.2f\n',max(stren));
+fprintf('Lower Quart %.2f\n',prctile(stren,25));
+fprintf('Mean %.2f\n',prctile(stren,75));
+fprintf('Variance %.2f\n',var(stren));
+fprintf('Stdev %.2f\n',std(stren));
+fprintf('Range %.2f\n',range(stren));
+fprintf('IQR %.2f\n\n',iqr(stren));
+
+close all;
+figure('Name','RDEN Histogram','NumberTitle','off');;
+histogram(rden);
+title('RDEN Histogram');
+figure('Name','ACCEL Histogram','NumberTitle','off');
+histogram(accel);
+title('ACCEL Histogram');
+figure('Name','Maximum Load Histogram','NumberTitle','off');
+histogram(load);
+title('Maximum Load Histogram');
+figure('Name','Compressive Load Histogram','NumberTitle','off');
+histogram(stren);
+title('Compressive Load Histogram');
+figure('Name','Load vs. Strength Scatterplot','NumberTitle','off');
+scatter(load,stren);
+title('Load vs. Strength Scatterplot');
