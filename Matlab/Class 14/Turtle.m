@@ -4,6 +4,8 @@ classdef Turtle
 		y
 		heading
 		pen_on_paper
+		pen_width
+		pen_color
 	end
 	
 	methods
@@ -12,6 +14,8 @@ classdef Turtle
 			obj.y = 0;
 			obj.heading = 90;
 			obj.pen_on_paper = true;
+			obj.pen_width = 1;
+			obj.pen_color = 'black';
 		end
 		
 		function obj = forward(obj,distance)
@@ -21,14 +25,22 @@ classdef Turtle
 			if obj.pen_on_paper
 				hold on;
 				l = line([obj.x x2],[obj.y y2]);
-				l.Color = 'black';
-				l.LineWidth = 1;
+				l.Color = obj.pen_color;
+				l.LineWidth = obj.pen_width;
 				hold off
 				pause(0.1);
 			end
 			
 			obj.x = x2;
 			obj.y = y2;
+		end
+		
+		function obj = setPenColor(obj,new_color)
+			obj.pen_color = new_color;
+		end
+		
+		function obj = setPenWidth(obj,new_width)
+			obj.pen_width = new_width;
 		end
 		
 		function obj = rotate(obj,angle)
